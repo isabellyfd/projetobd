@@ -1,0 +1,5 @@
+db MySQL
+
+username db : adminpsc
+senha db: sistemapscadmin
+

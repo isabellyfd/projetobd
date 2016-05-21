@@ -1,0 +1,261 @@
+{% load static %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CITi - Sistema de Inscriçao</title>
+    <!-- MATERIAL ICON ADN GOOGLE FONT-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- JQUERY -->
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- // <script type="text/javascript" src="/static/js/mask.js" ></script> -->
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-theme.min.css' %}">
+	<script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+
+	<!-- MATERIAL CSS-->
+	<link rel="stylesheet" type="text/css" href="{% static 'material/css/bootstrap-material-design.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'material/css/bootstrap-material-design.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'material/css/ripples.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'material/css/ripples.min.css' %}">
+
+	<!-- MATERIAL JS -->
+	<script type="text/javascript" src="{% static 'material/js/material.js' %}"></script>
+	<script type="text/javascript" src="{% static 'material/js/material.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'material/js/ripples.js' %}"></script>
+	<script type="text/javascript" src="{% static 'material/js/ripples.min.js' %}"></script>
+	
+	<!-- APP -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'css/app.css' %}">
+	<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+	
+</head>
+{% endblock %}
+
+{% block corpo %}
+<body>
+	<div class="container">
+		<div id="logo">
+			<a href="/">
+				<img src="{% static 'images/citi.png' %}" class="img-responsive" /> 
+			</a>
+		</div>
+
+		<div id="botoes" class="">
+			<h3>SISTEMA DE INSCRIÇAO</h3>
+			<div class="btn-group btn-group-justified btn-group-raised">
+			  	<a href="#" id="trigger-inscricao" class="btn btn-raised btn-sucesso">Inscreva-se</a>
+			  	<a href="#" id="trigger-edicao" class="btn btn-raised btn-sucesso">Editar inscrição</a>
+			</div>
+
+			{% if messages %}
+				<center class="messages">
+				    {% for message in messages %}
+				    <h4
+				    	{% if message.tags == 'success' %}
+				    		class="alert btn-success"
+				    	{% elif message.tags == 'error' %}
+				    		class="alert btn-danger"
+				    	{% endif %}>
+				    	{{ 	message }}
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					</h4>
+				    {% endfor %}
+				</center>
+			{% endif %}
+
+		</div>
+		
+
+		<div id="conteudo">
+			<div class="jumbotron animated fadeInUp" id="datas">
+	  			<h3>Processo Seletivo CITi 2016.1 - INSCRIÇÔES ABERTAS!</h3>
+
+				<p>Vagas nas áreas de Negócios, Produção, Administrativo/Financeiro, Assessoria de Gestão e Comunicação.</p>
+					<p>29 de  Março a 23 de Abril - Cronograma completo <a href="https://docs.google.com/a/cin.ufpe.br/spreadsheets/d/1TXkGWQGdTL47wKaoH26_OWXlIEFQjSz94hFqU7KNN_0/edit?usp=sharing" style="font-size: 20px; color: #74BD43" target="_blank">aqui</a>.</p>
+			</div>
+
+			<div id="inscricao" class="jumbotron animated fadeInUp" style="overflow: hidden">
+				<form action="/inscrever" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+					<div class="form-group label-floating col-md-12">
+	      				<label class="control-label" for="nome">Nome</label>
+	      				<input class="form-control" id="nome" name="nome" type="text">
+	    			</div>
+	    
+	    			<div class="form-group label-floating col-md-6">
+	      				<label class="control-label" for="cpf">CPF</label>
+	      				<input class="form-control" id="cpf" name="cpf" type="text">
+	   				</div>
+
+				    <div class="form-group col-md-6 data">
+				      	<label class="control-label" for="data-nascimento">Data de Nascimento</label>
+				      	<input class="form-control" id="data-nascimento" name ="data-nascimento" type="text">
+				    </div>
+
+				    <div class="form-group label-floating col-md-6">
+				     	<label class="control-label" for="email">E-mail</label>
+				    	<input class="form-control" id="email" name="email" type="text">
+				    </div>
+
+				    <div class="form-group label-floating col-md-6">
+				     	<label class="control-label" for="curso">Curso</label>
+				      	<input class="form-control" id="curso" name="curso" type="text">
+				    </div>
+
+				    <div class="form-group label-floating col-md-12">
+				     	<label class="control-label col-md-12" for="area1">Opção de área 1</label>
+				      	<select class="form-control" id="area1" name="area1">
+				      		<option value="0">Escolher</option>
+				      		<option value="Adm/Fin">Administrativo/Financeiro</option>
+				      		<option value="Produção">Produção</option>
+				      		<option value="Comunicação">Comunicação</option>
+				      		<option value="AG">Assessoria de Gestão</option>
+				      		<option value="Negócios">Negócios</option>
+				      	</select>
+				    </div>
+					
+					<div class="form-group label-floating col-md-12">
+				     	<label class="control-label col-md-12" for="area2">Opção de área 2</label>
+				      	<select class="form-control" name="area2" id="area2">
+				      		<option value="0">Escolher</option>
+				      		<option value="Adm/Fin">Administrativo/Financeiro</option>
+				      		<option value="Produção">Produção</option>
+				      		<option value="Comunicação">Comunicação</option>
+				      		<option value="AG">Assessoria de Gestão</option>
+				      		<option value="Negócios">Negócios</option>
+				      	</select>
+				    </div>
+
+				    <div class="form-group label-floating col-md-6">
+				     	<label class="control-label col-md-6" for="turno">Turno da dinâmica</label>
+				      	<select class="form-control" id="turno" name="turno">
+				      		<option value="0">Escolher</option>
+				      		<option value="Manhã">Manhã</option>
+				      		<option value="Tarde">Tarde</option>
+				      	</select>
+				    </div>
+
+				    <div class="form-group label-floating col-md-6">
+			        <label for="periodo" class="control-label col-md-6">Período Atual</label> 
+			            <select id="periodo" name="periodo" class="form-control">
+			            	<option value="0">Escolher</option>
+		                    <option value="Primeiro">Primeiro</option>
+		                    <option value="Segundo">Segundo</option>
+		                    <option value="Terceiro">Terceiro</option>
+		                    <option value="Quarto">Quarto</option>
+		                    <option value="Quinto">Quinto</option>
+		                    <option value="Sexto">Sexto</option>
+		                    <option value="Sétimo">Sétimo</option>
+		                    <option value="Oitavo">Oitavo</option>
+		                    <option value="Nono">Nono</option>
+		                    <option value="Decimo">Décimo</option>
+				        </select>
+			        </div>
+										
+					<div class="form-group label-floating col-md-12">
+				    	<label class="control-label" for="linkedin">Link do perfil Linkedin/Lates(opcional)</label>
+				        <input type="text" class="form-control" id="linkedin" name="linkedin">
+				    </div>
+
+				    <div class="form-group label-floating col-md-12">
+				    <label class="control-label" for="senha">Senha para editar os seus dados posteriormente</label>
+				        <input type="password" class="form-control" id="senha" name="senha">
+				    </div>
+
+				    <h4>ARQUIVOS</h4>
+
+				    <div class="form-group col-md-12">
+					  	<input type="file" id="historico" name="historico">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Histórico Escolar">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+
+				  	<div class="form-group col-md-12">
+					  	<input type="file" id="curriculum" name="curriculum">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Currículum Vitae">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+
+				  	<div class="form-group col-md-12">
+					  	<input type="file" id="foto" name="foto">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Foto 3x4">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+	      
+			        <div class="form-group">
+		                <div class="col-md-12 submit">
+		                    <button type="submit" class="btn btn-raised btn-raised btn-success enviar-formulario">Inscrever</button>
+		                </div>
+			        </div>
+				</form>			
+		    </div>
+
+        	<div class="jumbotron animated fadeInUp" style="clear: both; overflow: hidden" id="login">
+        		<form action="/minha-inscricao" method="POST">
+        		{% csrf_token %}
+					<div class="row">
+			  			<div class="col-md-12">
+			  				<fieldset>
+					    		<div class="form-group label-floating">
+							    	<label class="control-label" for="cpf_login">CPF</label>
+							   		<input class="form-control" id="cpf_login" name="cpf_login" type="text">
+								</div>
+					    	</fieldset>
+			 			</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<fieldset>
+								<div class="form-group label-floating">
+							    	<label class="control-label" for="senha_login">Senha</label>
+							   		<input class="form-control" id="senha_login" name="senha_login" type="password">
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-md-12 submit">
+						<div id="botoes" style="clear: both">
+							<button type="submit" class="btn btn-raised btn-raised btn-success ">Editar</a>
+						</div>
+				  	</div>
+				</form>
+			</div>
+    	</div>	
+		<script type="text/javascript" src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+			<script type="text/javascript">
+				jQuery(function($) {
+				      $.mask.definitions['~']='[+-]';
+				      $('#data-nascimento').mask('99/99/9999',{placeholder:"dd/mm/aaaa"});
+				      $('#cpf_login').mask('999.999.999-99');
+				      $('#cpf').mask('999.999.999-99');
+				      
+				   });
+			</script>
+	</body>
+	{% endblock %}
+</html>

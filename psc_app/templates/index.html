@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CITi PSC</title>
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+</head>
+<body>
+	<div id="top" class="container center-text">
+		<div id="pass1" class="tree container">
+			<img src="{% static 'images/pass1.png' %}" style="width: 100%;">
+		</div>
+		<div id="psc" class="tree container">
+			<img src="{% static 'images/psc.png' %}" style="width: 100%;">
+		</div>
+		<div id="pass2" class="tree container">
+			<img src="{% static 'images/pass2.png' %}" style="width: 100%;">
+		</div>
+	</div>
+
+	<div style="position: absolute; top: 15%;">
+		<img id="comu" class="pointer" src="{% static 'images/comu.png' %}">
+		<img id="produ" class="pointer" src="{% static 'images/produ.png' %}">
+		<img id="neg" class="pointer" src="{% static 'images/neg.png' %}">
+	</div>
+
+	<div style="position: absolute; top: 20%;">
+		<img id="adm" class="pointer" src="{% static 'images/adm.png' %}">
+		<img id="ag" class="pointer" src="{% static 'images/ag.png' %}">
+	</div>
+
+	<div id="content">
+		<p id="contentParagraph" class="animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi iusto ad ea aliquid tempore quidem tempora voluptatem ut quam iure sit, fugit expedita, dolorem facere, magni reiciendis! Ad, ex, molestiae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores animi reprehenderit recusandae! Odit ullam consequatur blanditiis, vero impedit, possimus autem aperiam voluptas. Sed, sapiente, culpa! Sit eius nam vitae reprehenderit.</p>
+
+		<a href="{% url 'inscricao' %}">
+			<img id="insc" class="pointer" src="{% static 'images/insc.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);">
+		</a>
+
+	</div>
+
+	<div id="trees" class="container center-text">
+		<div id="tree1" class="tree container">
+			<img src="{% static 'images/arvore1.png' %}" style="width: 100%;">
+		</div>
+		<div id="placas" class="tree container">
+			<img src="{% static 'images/logo.png' %}" style="width: 100%;">
+		</div>
+		<div id="tree2" class="tree container">
+			<img src="{% static 'images/arvore2.png' %}" style="width: 100%;">
+		</div>
+		<div id="tree3" class="tree container">
+			<img src="{% static 'images/arvore3.png' %}" style="width: 100%;">
+		</div>
+		<!-- <img id="tree23" src="static/images/chao.png"> -->
+		<!-- <img id="tree4" src="static/images/chao.png"> -->
+	</div>
+
+	<div id="ground" class="container center-text">
+		<img src="{% static 'images/chao.png' %}">
+	</div>
+</body>
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</html>

@@ -1,0 +1,156 @@
+/*================================ NAVBAR, DROPDOWNS ================================*/
+.active a, .open a[class="dropdown-toggle"]{
+	background: #7bc0f8 !important;
+}
+
+.navbar-default{
+	background: #42a5f5;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+
+.navbar .navbar-form{
+    margin-top: 13px;
+    display: inline-flex;
+    width: 28%;
+    padding-right: 0;
+}
+
+.navbar-form .form-group{
+    display: inline-flex;
+    width: 100%;
+}
+
+.navbar-nav > li > a{
+	text-shadow: none !important;
+}
+
+.navbar-nav > li > a{
+	color: white !important;
+}
+
+.navbar .dropdown-menu li > a{
+	color: #42a5f5;
+}
+
+.navbar .dropdown-menu li > a, .navbar.navbar-default .dropdown-menu li > a {
+    font-size: 16px;
+    padding: 5px 16px;
+}
+
+.navbar .dropdown-menu li > a:focus, .navbar .dropdown-menu li > a:hover, .navbar.navbar-default .dropdown-menu li > a:focus, .navbar.navbar-default .dropdown-menu li > a:hover {
+    color: white;
+    background-color: #42a5f5;
+    background-image: linear-gradient(to bottom,#42a5f5 0,#42a5f5 100%);
+}
+
+/*============================ Botão checkbox animado ============================*/
+.togglebutton label .toggle, .togglebutton label input[type="checkbox"][disabled] + .toggle {
+	background-color: rgba(210, 171, 171, 0.7);
+}
+
+/*======================================= FORM-CONTROL(COR DA LINHA BOTTOM DO INPUT) ==========================*/
+.form-control, .form-group .form-control {
+    border: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1DABED), to(#1DABED)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2)) !important;
+    background-image: -webkit-linear-gradient(#1DABED, #1DABED), -webkit-linear-gradient(#D2D2D2, #D2D2D2) !important;
+    background-image: -o-linear-gradient(#1DABED, #1DABED), -o-linear-gradient(#D2D2D2, #D2D2D2) !important;
+    background-image: linear-gradient(#1DABED, #1DABED), linear-gradient(#D2D2D2, #D2D2D2) !important;
+    -webkit-background-size: 0 2px, 100% 1px;
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: background 0s ease-out;
+    -o-transition: background 0s ease-out;
+    transition: background 0s ease-out;
+    float: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#form-personalizacao .form-control, .cores > .form-control{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2)) !important;
+    background-image: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(transparent, transparent) !important;
+    background-image: -o-linear-gradient(transparent, transparent), -o-linear-gradient(transparent, transparent) !important;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(transparent, transparent) !important;
+    -webkit-background-size: 0 2px, 100% 1px;
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: background 0s ease-out;
+    -o-transition: background 0s ease-out;
+    transition: background 0s ease-out;
+    float: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* ============================= TOOLIP ===========================*/
+/*#maior .tooltip-inner{
+    background-color: white !important;
+    color: #42a5f5 !important;
+    margin-right: 30px;
+    padding: 5px;
+}*/
+
+/*#dicas .tooltip-inner{
+    background-color: white !important;
+    color: #42a5f5 !important;
+    margin-right: 50px;
+    padding: 5px;
+}*/
+
+/*#estilo-da-fonte .tooltip-inner{
+    background-color: white !important;
+    color: #42a5f5 !important;
+    margin-right: 50px;
+    padding: 5px;
+}*/
+
+/*#atualizar-plano .tooltip-inner{
+    background-color: white !important;
+    color: #42a5f5 !important;
+    margin-right: 35px;
+    padding: 5px;
+    top: 20px;
+}*/
+
+.tooltip-inner{
+    background-color: white !important;
+    color: #42a5f5 !important;
+    padding: 5px;
+}
+
+/*============================= FORM ====================*/
+.form-cadastro input, .form-cadastro select{
+    height: 45px;
+}
+
+.form-cadastro .checkbox, .form-cadastro .radio{
+    margin-top: 0 !important;
+}
+
+.form-cadastro .radio{
+    margin-left: -10px;
+}
+
+.form-cadastro .radio label{
+    padding-left: 30px;
+}
+
+.is-focused label{
+    color: #aaaaaa!important;
+}
+
+/*======================== ANIMATES ===================*/
+.animated {
+  -webkit-animation-duration: .3s !important;
+  animation-duration: .3s !important;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

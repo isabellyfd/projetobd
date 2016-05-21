@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'stag';
+    src: url(../fonts/Stag-Light.otf);
+}
+
+@font-face {
+    font-family: 'stag-bold';
+    src: url(../fonts/Stag-Bold.otf);
+}
+
+*{
+    font-family: 'stag';
+    transition: all ease-in-out .3s;
+    -webkit-transition: all ease-in-out .3s;
+    -moz-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+	font-size: 13px;
+	/*color: white;*/
+}
+
+html, body{
+    background-color: #eee;
+    min-width: 350px;
+}
+
+h1, h4{
+    font-family: 'stag-bold' !important;
+}
+
+h4{
+    color: #74BD43;
+    text-align: center;
+}
+
+tr > th{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+td > a > i{
+    color: #74BD43;
+}
+
+#botoes h3{
+    font-family: 'stag-bold';
+    text-align: center;
+}
+
+#datas h3{
+    text-align: center;
+    font-family: 'stag-bold';
+}
+
+#datas p{
+    text-align: center;
+}
+
+.form-control, .form-group .form-control {
+    border: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#74BD43), to(#74BD43)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2)) !important;
+    background-image: -webkit-linear-gradient(#74BD43, #74BD43), -webkit-linear-gradient(#74BD43, #74BD43) !important;
+    background-image: -o-linear-gradient(#74BD43, #74BD43), -o-linear-gradient(#74BD43, #74BD43) !important;
+    background-image: linear-gradient(#74BD43, #74BD43), linear-gradient(#74BD43, #74BD43) !important;
+    -webkit-background-size: 0 2px, 100% 1px;
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: background 0s ease-out;
+    -o-transition: background 0s ease-out;
+    transition: background 0s ease-out;
+    float: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.data{
+    margin: 0 0 0 1% !important;
+}
+
+.data label{
+    margin-top: 12px !important;
+}
+
+#login .is-focused label{
+    padding-left: 0;
+}
+
+.is-focused label{
+    color: #74BD43 !important;
+}
+
+.clearfix{
+    clear: both;
+}
+
+#logo{
+    text-align: center;
+    margin: 4em 0;
+}
+
+#logo > img{
+    margin: auto;
+    max-width: 15%;
+}
+
+.submit{
+    text-align: center;
+}
+
+#inscricao, #login{
+    max-width: 600px;
+    margin: 3em auto;
+    display: none;
+}
+
+#loginAdmin{
+    max-width: 600px;
+    margin: 3em auto;
+}
+
+#inscricao .col-md-12, #inscricao .col-md-6, #edicao .col-md-12, #edicao .col-md-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#form-pesquisa #submit{
+    margin-bottom: 5em;
+}
+
+#form-pesquisa .is-focused label{
+    padding-left: 15px !important;
+}
+
+#nome .form-group.label-floating:not(.is-focused) label.control-label,
+#editando-candidato .form-group.label-floating:not(.is-focused) label.control-label,
+#ver-candidato .form-group.label-floating:not(.is-focused) label.control-label,
+#ver-candidato .form-group.label-floating:not(.is-empty) label.control-label{
+    left: 15px !important;
+}
+
+/*==================== EDITAR ===================*/
+#editando-candidato{
+    max-width: 700px;
+    margin: 3em auto;
+}
+#editar-candidato h2{
+    text-align: center;
+}
+
+#editando-candidato .submit{
+    margin: 3em auto;
+}
+
+.ver-enviado a, .ver-enviado a:hover, .ver-enviado:focus{
+    color: #74BD43;
+}
+
+#editar-minha-inscricao{
+    text-align: center;
+}
+
+/* =========== VER ============*/
+#ver-candidato h3{
+    font-family: 'stag-bold';
+}
+
+#ver-candidato p{
+    font-size: 18px;
+}
+
+#ver-candidato{
+    margin-bottom: 3em;
+    overflow: hidden;
+}
+#ver-candidato .foto{
+    margin-top: 4em;
+}
+
+#ver-candidato .ver-enviado{
+    margin-bottom: 1em;
+}
+
+/*=============== MEDIA ============= */
+@media (min-width: 992px) {
+    #inscricao .col-md-6{
+        width: 49%;
+        margin-right: 1%;
+    }    
+}

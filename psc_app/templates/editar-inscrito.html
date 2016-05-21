@@ -1,0 +1,186 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block corpo %}
+	<body>
+	    <div class="container">
+		    <div id="logo">
+				<img src="{%  static 'images/citi.png' %}" class="img-responsive" /> 
+			</div>
+	        <div class="row" id="editar-minha-inscricao">
+	          	<div class="col-xs-6 col-md-12"><h1>CITi PSC - Editar inscrição</h1></div>
+	        	<h2>{{ inscrito.name }}</h2>
+	        </div>
+	        
+
+			<div id="inscricao" class="jumbotron animated fadeInUp" style="overflow: hidden; display: block;">
+				<div class="col-md-12">
+					{% if messages %}
+						<center class="messages">
+						    {% for message in messages %}
+						    <h4
+						    	{% if message.tags == 'success' %}
+						    		class="alert btn-success"
+						    	{% elif message.tags == 'error' %}
+						    		class="alert btn-danger"
+						    	{% endif %}>
+						    	{{ 	message }}
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							</h4>
+						    {% endfor %}
+						</center>
+					{% endif %}
+				</div>
+				<form action="/save-inscrito/{{ inscrito.id }}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+		            <div class="form-group col-md-12">
+	      				<label class="control-label" for="nome">Nome</label>
+	      				<input class="form-control" id="nome" name="nome" type="text" value="{{ inscrito.name }}">
+	    			</div>
+	    
+	    			<div class="form-group col-md-6">
+	      				<label class="control-label" for="cpf">CPF</label>
+	      				<input class="form-control" id="cpf" name="cpf" type="text" value="{{ inscrito.cpf }}">
+	   				</div>
+
+				    <div class="form-group col-md-6">
+				      	<label class="control-label" for="data-nascimento">Data de Nascimento</label>
+				      	<input class="form-control" id="data-nascimento" name="data-nascimento" type="text" value="{{ inscrito.birth_data }}">
+				    </div>
+
+				    <div class="form-group col-md-6">
+				     	<label class="control-label" for="email">E-mail</label>
+				    	<input class="form-control" id="email" name="email" type="text" value="{{ inscrito.email }}">
+				    </div>
+
+				    <div class="form-group col-md-6">
+				     	<label class="control-label" for="curso">Curso</label>
+				      	<input class="form-control" id="curso" name="curso" type="text" value="{{ inscrito.curso }}">
+				    </div>
+
+				    <div class="form-group col-md-12">
+				     	<label class="control-label" for="area1">Opção de área 1</label>
+				      	<select class="form-control" id="area1" name="area1">
+				      		<option value="{{ inscrito.area1 }}" selected>{{ inscrito.area1 }}</option>
+				      		<option value="Adm/Fin">Administrativo/Financeiro</option>
+				      		<option value="Produção">Produção</option>
+				      		<option value="Comunicação">Comunicação</option>
+				      		<option value="AG">Assessoria de Gestão</option>
+				      		<option value="Negócios">Negócios</option>
+				      	</select>
+				    </div>
+					
+					<div class="form-group col-md-12">
+				     	<label class="control-label" for="area2">Opção de área 2</label>
+				      	<select class="form-control" id="area2" name="area2">
+				      		<option value="{{ inscrito.area2 }}" selected>{{ inscrito.area2 }}</option>
+				      		<option value="Adm/Fin">Administrativo/Financeiro</option>
+				      		<option value="Produção">Produção</option>
+				      		<option value="Comunicação">Comunicação</option>
+				      		<option value="AG">Assessoria de Gestão</option>
+				      		<option value="Negócios">Negócios</option>
+				      	</select>
+				    </div>
+
+				    <div class="form-group col-md-6">
+				     	<label class="control-label" for="turno">Turno da dinâmica</label>
+				      	
+				      	<select class="form-control" id="turno" name="turno" value="{{ inscrito.turno }}">
+				      		<option value="{{ inscrito.turno }}" selected>{{ inscrito.turno }}</option>
+				      		<option value="Manhã">Manhã</option>
+				      		<option value="Tarde">Tarde</option>
+				      	</select>
+				    </div>
+
+				    <div class="form-group col-md-6">
+			        	<label for="periodo" class=" control-label">Período Atual</label> 
+			            <select id="periodo" name="periodo" class="form-control">
+		                    <option value="{{ inscrito.periodo }}" selected>{{ inscrito.periodo }}</option>
+		                    <option value="Primeiro">Primeiro</option>
+		                    <option value="Segundo">Segundo</option>
+		                    <option value="Terceiro">Terceiro</option>
+		                    <option value="Quarto">Quarto</option>
+		                    <option value="Quinto">Quinto</option>
+		                    <option value="Sexto">Sexto</option>
+		                    <option value="Sétimo">Sétimo</option>
+		                    <option value="Oitavo">Oitavo</option>
+		                    <option value="Nono">Nono</option>
+		                    <option value="Decimo">Décimo</option>
+				        </select>
+			        </div>
+										
+					<div class="form-group col-md-12">
+				    	<label class="control-label" for="linkedin">Link do perfil Linkedin/Lates(opcional)</label>
+				        <input type="text" class="form-control" id="linkedin" name="linkedin" value="{{ inscrito.linkedin }}">
+				    </div>
+
+				    <h4>ARQUIVOS</h4>
+
+				    <div class="form-group col-md-12">
+					  	<input type="file" id="historico-editar" name="historico-editar">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Histórico Escolar">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+				  	<div class="ver-enviado col-md-12">
+						<a href="{{ inscrito.historico.url }}" target="_blank">VER ENVIADO</a>
+					</div>
+
+				  	<div class="form-group col-md-12">
+					  	<input type="file" id="curriculum-editar" name="curriculum-editar">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Currículum Vitae">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+					<div class="ver-enviado col-md-12">
+						<a href="{{ inscrito.curriculum.url }}" target="_blank">VER ENVIADO</a>
+					</div>
+
+				  	<div class="form-group col-md-12">
+					  	<input type="file" id="foto-editar" name="foto-editar">
+				  		<div class="input-group">
+				    		<input type="text" readonly="" class="form-control" placeholder="Foto 3x4">
+				      		<span class="input-group-btn input-group-sm">
+					        	<button type="button" class="btn btn-fab btn-fab-mini">
+					          		<i class="material-icons">attach_file</i>
+					        	</button>
+				      		</span>
+				  		</div>
+				  	</div>
+				  	<div class="ver-enviado col-md-12">
+						<a href="{{ inscrito.image.url }}" target="_blank">VER ENVIADO</a>
+					</div>
+
+		            <div class="form-group">
+	                    <div class="col-md-6 submit">
+	                        <button type="submit" class="btn btn-raised btn-raised btn-success enviar-formulario">SALVAR</button>
+	                    </div>
+	                    <div class="col-md-6 submit">
+	                        <a href="/inscrever/logout" class="btn btn-raised btn-raised btn-danger">Cancelar</a>
+	                    </div>
+		            </div>
+		        </form>	
+			</div>
+	    </div>
+	    <script type="text/javascript" src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+			<script type="text/javascript">
+				jQuery(function($) {
+				      $.mask.definitions['~']='[+-]';
+				      $('#data-nascimento').mask('99/99/9999',{placeholder:"dd/mm/aaaa"});
+				      $('#cpf').mask('999.999.999-99');
+				      
+				   });
+			</script>
+	</body>
+	{% endblock %}
+</html>
+

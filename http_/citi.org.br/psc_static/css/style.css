@@ -1,0 +1,460 @@
+/* elements region */
+* {
+	font-family: 'Stag';
+}
+
+body, html { 
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+}
+
+/* elements region */
+
+/* ids region */
+#menu {
+	position: absolute;
+	width: 100%;
+	top: 47%;
+
+	font-size: 16px;
+}
+
+#menu div a {
+	text-decoration: none;
+	color: black;
+}
+
+#menu div a:hover {
+	color: orange;
+}
+
+#submenu {
+	width: 100%;
+	position: absolute;
+	top: 12%;
+
+	font-size: 14px;
+}
+
+#submenu div a {
+	text-decoration: none;
+	color: black;
+}
+#submenu div a:hover  {
+	color: orange;
+}
+
+#top {
+	width: 100%;
+	position: absolute;
+	top: 2%;
+	padding: 0%;
+	font-size: 10px;
+}
+
+#psc {
+	margin-left: 25%;
+	padding: 0px;
+	width: 18%;
+}
+
+#pass1 {
+	margin-left: 2%;
+	padding: 0px;
+	width: 13%;
+}
+
+#pass2 {
+	margin-left: 25%;
+	padding: 0px;
+	width: 15%;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+#comu {
+	margin-left: 36%;
+	width: 7%
+}
+
+#produ {
+	margin-left: 3%;
+	width: 6%
+}
+
+#neg {
+	margin-left: 3%;
+	width: 6%
+}
+
+#adm {
+	margin-left: 32%;
+	width: 17%
+}
+
+#ag {
+	margin-left: 3%;
+	width: 13%
+}
+
+
+#content {
+	position: absolute;
+	top: 30%;
+	padding: 6%;
+	width: 100%;
+}
+
+#contentParagraph {
+	text-align: center;
+}
+
+#insc {
+	width: 12%;
+	margin-left: 44%;
+	padding-top: 2%;
+}
+
+#trees {
+	width: 100%;
+	position: absolute;
+	bottom: 2%;
+	padding: 0%;
+	font-size: 10px;
+}
+
+.tree {
+	float: left;
+}
+
+#tree1 {
+	margin-left: 2%;
+	padding: 0px;
+	width: 13%;
+}
+
+#placas {
+	margin-left: 4%;
+	margin-top: 5.5%;
+	padding: 0px;
+	width: 15%;
+}
+
+#tree2 {
+	margin-left: 9%;
+	padding: 0px;
+	width: 22%;
+}
+
+
+#tree3 {
+	margin-left: 7%;
+	padding: 0px;
+	width: 18%;
+}
+
+#ground {
+	width: 100%;
+	position: absolute;
+	bottom: 0%;
+	padding: 0%;
+	font-size: 10px;
+}
+
+#ground img {
+	width: 100%;
+}
+
+@media(max-width: 1200px) {
+	#ground img {
+		width: 150%;
+	}
+	
+	#insc {
+		width: 13%;
+		margin-left: 44%;
+		padding-top: 2%;
+	}
+
+	#placas {
+		margin-top: 6.5%;
+		margin-left: 13%;
+		width: 22%;
+	}
+
+	#tree1 {
+		margin-left: 2%%;
+		width: 18%;
+	}
+
+	#tree2 {
+		margin-left: 13%;
+		width: 30%;
+	}
+
+	#tree3 {
+		display: none;
+	}
+	
+	#psc {
+		width: 27%;
+		margin-left: 15%;
+	}
+
+	#pass1 {
+		margin-left: 2%;
+		width: 18%;
+	}
+
+	#pass2 {
+		margin-left: 13%;
+		width: 23%;
+	}
+
+	#comu {
+		margin-left: 23%;
+		width: 15%
+	}
+
+	#produ {
+		margin-left: 3%;
+		width: 13%
+	}
+
+	#neg {
+		margin-left: 3%;
+		width: 13%
+	}
+
+	#adm {
+		margin-left: 16%;
+		width: 31%
+	}
+
+	#ag {
+		margin-left: 3%;
+		width: 26%
+	}
+}
+
+@media(max-width: 992px) {
+	#ground img {
+		width: 200%;
+	}
+	
+	#insc {
+		width: 16%;
+		margin-left: 42%;
+		padding-top: 2%;
+	}
+
+	#placas {
+		margin-top: 5.5%;
+		margin-left: 13%;
+		width: 22%;
+	}
+
+	#tree1 {
+		margin-left: 2%%;
+		width: 18%;
+	}
+
+	#tree2 {
+		margin-left: 15%;
+		width: 28%;
+	}
+
+	#tree3 {
+		display: none;
+	}
+	
+	#psc {
+		width: 28%;
+		margin-left: 14%;
+	}
+
+	#pass1 {
+		margin-left: 2%;
+		width: 18%;
+	}
+
+	#pass2 {
+		margin-left: 16%;
+		width: 20%;
+	}
+
+	#comu {
+		margin-left: 23%;
+		width: 15%
+	}
+
+	#produ {
+		margin-left: 3%;
+		width: 14%
+	}
+
+	#neg {
+		margin-left: 3%;
+		width: 14%
+	}
+
+	#adm {
+		margin-left: 16%;
+		width: 31%
+	}
+
+	#ag {
+		margin-left: 3%;
+		width: 28%
+	}
+}
+
+@media(max-width: 768px) {
+	#ground img {
+		width: 300%;
+	}
+
+	#insc {
+		width: 28%;
+		margin-left: 38%;
+		padding-top: 2%;
+	}
+
+	#placas {
+		margin-top: 8%;
+		margin-left: 10%;
+		width: 31%;
+	}
+
+	#tree1 {
+		display: none;
+	}
+
+	#tree2 {
+		margin-left: 13%;
+		width: 41%;
+		margin-bottom: 2%;
+	}
+
+	#tree3 {
+		display: none;
+	}
+	
+	#psc {
+		width: 33%;
+		margin-left: 12%;
+	}
+
+	#pass1 {
+		margin-left: 2%;
+		width: 18%;
+	}
+
+	#pass2 {
+		margin-left: 12%;
+		width: 23%;
+	}
+
+	#comu {
+		margin-left: 18%;
+		width: 20%
+	}
+
+	#produ {
+		margin-left: 3%;
+		width: 17%
+	}
+
+	#neg {
+		margin-left: 3%;
+		width: 17%
+	}
+
+	#adm {
+		margin-left: 10%;
+		width: 40%
+	}
+
+	#ag {
+		margin-left: 3%;
+		width: 33%
+	}
+}
+
+@media(max-width: 600px) {
+	#ground img {
+		width: 400%;
+	}
+
+	#insc {
+		width: 35%;
+		margin-left: 33%;
+		padding-top: 2%;
+	}
+
+	#placas {
+		margin-top: 11.5%;
+		margin-left: 10%;
+		width: 40%;
+	}
+
+	#tree1 {
+		margin-left: 5%;
+		width: 35%;
+		display: block;
+	}
+
+	#tree2 {
+		display: none;
+	}
+
+	#tree3 {
+		display: none;
+	}
+	
+	#psc {
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	#pass1 {
+		display: none;
+	}
+
+	#pass2 {
+		display: none;
+	}
+
+	#comu {
+		margin-left: 11%;
+		width: 25%
+	}
+
+	#produ {
+		margin-left: 3%;
+		width: 22%
+	}
+
+	#neg {
+		margin-left: 3%;
+		width: 22%
+	}
+
+	#adm {
+		margin-left: 5%;
+		width: 48%
+	}
+
+	#ag {
+		margin-left: 3%;
+		width: 39%
+	}
+}
+
+/* ids region */
+
+.center-text {
+	text-align: center;
+}

@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block corpo %}
+	<body>
+		<div class="container">
+			<div id="logo">
+				<img src="{% static 'images/citi.png' %}" class="img-responsive" /> 
+			</div>
+
+			<div id="conteudo">
+	        	<div class="jumbotron animated fadeInUp" style="clear: both" id="loginAdmin">
+	        		<form action="/logar/" method="POST">
+	        		{% csrf_token %}
+						<div class="row">
+				  			<div class="col-md-12">
+				  				<fieldset>
+						    		<div class="form-group label-floating">
+								    	<label class="control-label" for="focusedInput1">Login</label>
+								   		<input class="form-control" id="focusedInput1" name="login" type="text">
+									</div>
+						    	</fieldset>
+				 			</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<fieldset>
+									<div class="form-group label-floating">
+								    	<label class="control-label" for="focusedInput1">Senha</label>
+								   		<input class="form-control" id="focusedInput1" name="senha" type="password">
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-md-12 submit">
+								<div id="botoes" style="clear: both">
+									<button type="submit" class="btn btn-raised btn-raised btn-success">Entrar</button>
+								</div>
+						  	</div>
+						</div>
+					</form>
+				</div>
+	    	</div>
+	    </div>
+	</body>
+	{% endblock %}
+</html>
