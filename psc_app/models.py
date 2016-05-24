@@ -6,6 +6,24 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser, PermissionsMixin)
 from django.conf import settings
 
+
+
+class Area(models.Model):
+	nome = models.CharField('Periodo', max_length=30, blank=True, null=True, unique=True)
+	descricao = models.TextField('Descricao', blank=True, null=True)
+
+	def __str__(self):
+		return self.nome
+
+class Periodo(models.Model):
+	nome = models.CharField('Periodo', max_length=20, blank=True, null=True, unique=True)
+	""" não faz sentido isso pq se tiver esse field
+		vai ter que ter um trigger ou function que incremente o valor de inscritos na tablela """
+	#inscritos = models.ManyToManyField('Inscricao', related_name='inscritos', blank=True)
+
+	def __str__(self):
+		return self.nome
+
 # Create your models here.
 class UserManager(BaseUserManager):
 
@@ -53,10 +71,12 @@ class Inscricao(AbstractBaseUser, PermissionsMixin):
 	date_joined = models.DateTimeField('Data de Entrada', auto_now_add=True)
 	cpf = models.CharField('CPF', max_length=20, blank=True, null=True)
 	curso = models.CharField('Curso', max_length=50, blank=False, null=False)
-	area1 = models.CharField('Area de interesse 1', max_length=50, blank=True, null=True)
-	area2 = models.CharField('Area de interesse 2', max_length=50, blank=True, null=True)
+	#area1 = models.CharField('Area de interesse 1', max_length=50, blank=True, null=True)
+	#area2 = models.CharField('Area de interesse 2', max_length=50, blank=True, null=True)
+	areas = models.ManyToManyField(Area)
 	turno = models.CharField('Turno da dinamica', max_length=20, blank=False, null=False)
-	periodo = models.CharField('Periodo', max_length=20, blank=True, null=True)
+	#periodo = models.CharField('Periodo', max_length=20, blank=True, null=True)
+	periodo =models.ForeignKey('Periodo', on_delete= models.CASCADE)
 	linkedin = models.URLField('Linkedin', blank=True, null=True)
 	historico = models.FileField(upload_to= 'media/imagens', verbose_name='Historico', blank=False, null=False)
 	curriculum = models.FileField(upload_to= 'media/imagens', verbose_name='Curriculum', blank=False, null=False)
@@ -95,19 +115,3 @@ class Inscricao(AbstractBaseUser, PermissionsMixin):
 	def set_enviado(self):
 		this.email_enviado = True
 		this.save()
-
-
-class Periodo(models.Model):
-	nome = models.CharField('Periodo', max_length=20, blank=True, null=True, unique=True)
-	inscritos = models.ManyToManyField('Inscricao', related_name='inscritos', blank=True)
-
-	def __str__(self):
-		return self.nome
-
-
-class Area(models.Model):
-	nome = models.CharField('Periodo', max_length=30, blank=True, null=True, unique=True)
-	descricao = models.TextField('Descricao', blank=True, null=True)
-
-	def __str__(self):
-		return self.nome
